@@ -6,11 +6,12 @@ WORKDIR /app
 FROM base AS install
 WORKDIR /app
 
-# Install build dependencies for native modules (argon2, etc.)
+# Install build dependencies for native modules (argon2, libpq, etc.)
 RUN apt-get update && apt-get install -y \
     python3 \
     make \
     g++ \
+    libpq-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy package files
@@ -37,6 +38,7 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y \
     openssl \
     ca-certificates \
+    libpq5 \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy necessary files from build stage
