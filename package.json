@@ -34,7 +34,7 @@
     "spamscanner": "^5.1.5"
   },
   "scripts": {
-    "start": "bun index.ts",
+    "start": "bun src/index.ts",
     "dev": "ts-node-dev --respawn --transpile-only index.ts"
   }
 }
