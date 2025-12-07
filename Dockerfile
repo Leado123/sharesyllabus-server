@@ -2,34 +2,27 @@
 FROM oven/bun:1 AS base
 WORKDIR /app
 
-# Install dependencies into a temp directory for caching
+# Install dependencies
 FROM base AS install
-RUN mkdir -p /temp/dev
-COPY package.json bun.lockb /temp/dev/
-RUN cd /temp/dev && bun install --frozen-lockfile
+COPY package.json bun.lockb* ./
+RUN bun install
 
-# Install production dependencies only
-RUN mkdir -p /temp/prod
-COPY package.json bun.lockb /temp/prod/
-RUN cd /temp/prod && bun install --frozen-lockfile --production
-
-# Copy node_modules from temp directory and all source files
-FROM base AS prerelease
-COPY --from=install /temp/dev/node_modules node_modules
+# Copy source files and generate Prisma client
+FROM base AS build
+COPY --from=install /app/node_modules ./node_modules
 COPY . .
-
-# Generate Prisma client
 RUN bunx prisma generate
 
 # Final production image
 FROM base AS release
-COPY --from=install /temp/prod/node_modules node_modules
-COPY --from=prerelease /app/src ./src
-COPY --from=prerelease /app/prisma ./prisma
-COPY --from=prerelease /app/package.json .
-COPY --from=prerelease /app/tsconfig.json .
-COPY --from=prerelease /app/node_modules/.prisma ./node_modules/.prisma
-COPY --from=prerelease /app/node_modules/@prisma ./node_modules/@prisma
+WORKDIR /app
+
+# Copy necessary files from build stage
+COPY --from=build /app/node_modules ./node_modules
+COPY --from=build /app/src ./src
+COPY --from=build /app/prisma ./prisma
+COPY --from=build /app/package.json ./
+COPY --from=build /app/tsconfig.json ./
 
 # Create syllabi directory for file uploads
 RUN mkdir -p /app/syllabi
