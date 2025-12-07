@@ -1,0 +1,4 @@
+{
+  "schema": "path/to/schema.graphql",
+  "documents": "src/**/*.{graphql,ts,tsx}"
+}

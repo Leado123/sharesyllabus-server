@@ -1,0 +1,224 @@
+ENG-1A: English Composition
+ENG-1AH: Honors English Composition
+ALR-4: Intermediate Algebra
+ENG-1B: Critical Thinking and Writing
+ENG-1BH: Honors Critical Thinking and Writing
+PHI-11: Critical Thinking
+COM-1: Public Speaking
+COM-1H: Honors Public Speaking
+COM-6: Dynamics of Small Group Communication
+COM-9: Interpersonal Communication
+COM-9H: Honors Interpersonal Communication
+MAT-1A: Calculus I
+MAT-5: Discrete Structures
+MAT-25: Mathematics for the Liberal Arts Student
+MAT-1AH: Honors Calculus I
+MAT-9: Introduction to Statistics
+MAT-70A: Intermediate Algebra Part I
+MAT-1B: Calculus II
+MAT-10: Precalculus
+MAT-70B: Intermediate Algebra Part II
+MAT-1C: Calculus III
+MAT-11: College Algebra
+PSY-48: Introduction to Chemical Dependency
+SOC-48: Introduction to Chemical Dependency
+MAT-2: Differential Equations
+MAT-12: Statistics
+MAT-12H: Honors Statistics
+MAT-3: Linear Algebra
+AHS-1: Introduction to Allied Health
+AHS-9: Medical Terminology
+GAM-2: Introduction to Game Development
+AHS-10: Health Education
+MUS-3: Introduction to Music
+MUS-19: Introduction to Music Theory
+MUS-19H: Honors Introduction to Music Theory
+AHS-2: Medical Terminology
+AHS-2H: Honors Medical Terminology
+AHS-12: Healthcare Ethics
+AHS-13: Pharmacology
+AHS-14: Clinical Practices in Allied Health
+ARE-35: Agricultural Economics
+ARE-36: Agricultural Business
+AHS-4: Patient Care Procedures
+AHS-5: Basic Medical Office Procedures
+AHS-6: Introduction to Healthcare
+ART-6: Art Appreciation
+AHS-6H: Honors Introduction to Healthcare
+ART-6H: Honors Art Appreciation
+AHS-7: Anatomy and Physiology
+AHS-8: Medical Assistant Skills
+DAN-6: Dance Appreciation
+DAN-6H: Honors Dance Appreciation
+MUS-23: History of Jazz
+MUS-25: History of Rock and Roll
+MUS-89: Music Production
+MUS-89H: Honors Music Production
+THE-3: Introduction to Theatre
+THE-9: History of Theatre
+THE-29: Technical Theatre
+HUM-4: Introduction to Humanities
+HUM-4H: Honors Introduction to Humanities
+HUM-5: World Religions
+HUM-5H: Honors World Religions
+HUM-8: Introduction to Philosophy
+ENG-8: Introduction to Mythology
+HUM-9: Introduction to Ethics
+HUM-10: World Civilizations
+HUM-10H: Honors World Civilizations
+HUM-11: History of Art
+HUM-16: Humanities of Latin America
+HUM-18: Humanities of Asia
+PHI-18: Philosophy of Religion
+HUM-23: Women in Western Culture
+ENG-23: The Bible as Literature
+HUM-35: Cultural History of the United States
+PHI-35: Introduction to Ethics
+PHI-36: Asian Philosophy
+SPA-2: Spanish Language and Culture
+SPA-3: Intermediate Spanish
+SPA-4: Advanced Spanish
+SPA-8: Spanish for Native Speakers
+SPA-11: Spanish Conversation
+SPA-12: Spanish Composition
+CHI-11: Chinese Language and Culture
+COM-12: Intercultural Communication
+ETS-2: Electronic Tools for Students
+ETS-7: Computer Applications for Business
+ETS-8: Introduction to Digital Media
+ETS-14: Web Design and Development
+FRE-2: French Language and Culture
+FRE-8: French Literature
+HIS-1: World History
+HIS-2: United States History
+HIS-6: Introduction to Historical Research
+HIS-6H: Honors Introduction to Historical Research
+HIS-7: History of Western Civilization
+HIS-7H: Honors History of Western Civilization
+HIS-14: History of California
+HIS-25: History of the United States
+HIS-26: History of the American West
+HIS-31: History of Mexico
+HIS-34: History of Latin America
+PHI-10: Introduction to Philosophy
+PHI-10H: Honors Introduction to Philosophy
+PHI-12: Introduction to Ethics
+PHI-19: Native American Thought
+PHI-22: Philosophy of Science
+PHI-33: Introduction to Social and Political Philosophy
+PHI-34: Philosophy of Art and Beauty
+ADJ-1: Introduction to the Administration of Justice
+ADJ-3: Concepts of Criminal Law
+ADJ-9: Law in American Society
+ADJ-9H: Honors Law in American Society
+ANT-1: Introduction to Anthropology
+ANT-1H: Honors Introduction to Anthropology
+ANT-2: Cultural Anthropology
+ANT-2H: Honors Cultural Anthropology
+ANT-3: Archaeology
+ANT-4: Human Evolution
+ANT-5: Physical Anthropology
+ANT-6: Native American Studies
+ANT-7: Anthropology of Religion
+ANT-8: Human Behavior and Society
+COM-13: Gender and Communication
+COM-20: Introduction to Communication Theory
+EAR-20: Introduction to Environmental Science
+ECO-4: Microeconomics
+ECO-7: Macroeconomics
+ECO-7H: Honors Macroeconomics
+ECO-8: Principles of Economics
+ECO-8H: Honors Principles of Economics
+ETS-1: Introduction to Information Systems
+ETS-3: Information Technology
+ETS-21: Computer Science
+ETS-23: Web Development
+GEG-2: World Geography
+GEG-3: Geography of the United States
+GEG-4: Geography of California
+GEG-6: Economic Geography
+HIS-34: History of Latin America
+JOU-7: Introduction to Journalism
+POL-1: Introduction to Political Science
+POL-1H: Honors Introduction to Political Science
+POL-2: Comparative Politics
+POL-4: International Relations
+POL-4H: Honors International Relations
+POL-5: United States Government
+POL-11: Political Theory
+POL-13: Political Ideologies
+POL-20: Introduction to Political Economy
+POL-21: California Politics
+POL-22: Environmental Politics
+POL-23: Politics of the Middle East
+PSY-1: General Psychology
+PSY-1H: Honors General Psychology
+PSY-2: Biological Psychology
+PSY-8: Introduction to Social Psychology
+PSY-9: Developmental Psychology
+PSY-11: Psychology of Gender
+PSY-33: Theories of Personality
+PSY-35: Abnormal Psychology
+PSY-35H: Honors Abnormal Psychology
+PSY-50: Research Methods in Psychology
+SJS-110: Introduction to Social Justice
+SOC-1: Introduction to Sociology
+SOC-1H: Honors Introduction to Sociology
+SOC-2: American Social Problems
+SOC-3: Marriage and Family Relations
+SOC-10: Race and Ethnic Relations
+SOC-10H: Honors Race and Ethnic Relations
+SOC-12: Introduction to Gender
+SOC-15: Sociology of Health and Illness
+SOC-20: Criminology
+SOC-50: Social Research Methods
+CHE-1A: General Chemistry 1
+CHE-1B: General Chemistry 2
+CHE-2A: Organic Chemistry 1
+CHE-2B: Organic Chemistry 2
+CHE-3: Introduction to Chemistry
+CHE-10: Environmental Chemistry
+CHE-12A: Biochemistry
+CHE-12B: Biochemistry
+GEG-1: Introduction to Geography
+GEG-1H: Honors Introduction to Geography
+GEG-1L: Geography Laboratory
+GEG-5: Geography of California
+PHS-1: Physical Science
+PHY-2A: General Physics
+PHY-2B: General Physics
+PHY-4A: Physics for Scientists and Engineers
+PHY-4B: Physics for Scientists and Engineers
+PHY-4C: Physics for Scientists and Engineers
+PHY-10: Introduction to Physics
+PHY-11: Principles of Physics
+ANT-1L: Introduction to Physical Anthropology Lab
+BIO-1: General Biology
+BIO-1H: Honors General Biology
+BIO-3: Introduction to Microbiology
+BIO-4: Introduction to Environmental Science
+BIO-5: Human Anatomy
+BIO-7: Human Physiology
+BIO-8: Human Biology
+BIO-10: General Botany
+BIO-16: Ecology
+BIO-18: Marine Biology
+BIO-19: Introduction to Biology
+BIO-21: General Genetics
+BIO-45: Human Genetics
+BIO-50A: Principles of Biology
+BIO-50B: Principles of Biology
+BIO-55: Botany
+BIO-60: Molecular Biology
+BIO-61: Microbiology
+CHI-2: Chinese Language and Culture
+ARA-1: Arabic Language and Culture
+ASL-1: American Sign Language
+FRE-1: French Language and Culture
+SPA-1: Introduction to Spanish Language
+ETS-1: Introduction to Information Systems
+ETS-3: Information Technology
+ETS-7: Computer Applications for Business
+ETS-8: Introduction to Digital Media
+ETS-21: Computer Science
+ETS-23: Web Development

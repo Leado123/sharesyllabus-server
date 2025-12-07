@@ -1,0 +1,176 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+//TODO: add functionality for other colleges to add classes
+//TODO: make teachers have an object
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum TextbookCost {
+  free
+  cheap // 30 dollars and less
+  moderate // 30-60 dollars
+  expensive // beyond 60 dollars
+}
+
+model Discipline {
+  id      String  @id @default(cuid())
+  name    String  @unique
+  classes Class[]
+}
+
+model Class {
+  id            String      @id @default(cuid())
+  className     String      @unique
+  fullClassName String      @default("Full Class Name")
+  syllabi       Syllabus[]
+  discipline    Discipline  @relation(fields: [disciplineId], references: [id])
+  disciplineId  String
+  school        School?     @relation(fields: [schoolId], references: [id])
+  schoolId      String?
+  professors    Professor[] @relation("ProfessorClasses")
+}
+
+model School {
+  id         String      @id @default(cuid())
+  name       String      @unique
+  fullName   String      @default("")
+  classes    Class[]
+  professors Professor[]
+  syllabi    Syllabus[]
+
+  ClassSubmission ClassSubmission[]
+}
+
+model Professor {
+  id       String     @id @default(cuid())
+  name     String     @unique
+  classes  Class[]    @relation("ProfessorClasses")
+  rmp      String?
+  syllabi  Syllabus[]
+  school   School?    @relation(fields: [schoolId], references: [id])
+  schoolId String?
+}
+
+model Syllabus {
+  id              String       @id @default(cuid())
+
+  submission     ClassSubmission? @relation(fields: [submissionId], references: [id])
+  submissionId   String?
+
+  school          School?      @relation(fields: [schoolId], references: [id]) 
+  schoolId        String?
+  // Whether or not the syllabus has been reviewed by a Tier 2 moderator
+  reviewed        Boolean      @default(false) 
+
+  dateCreated     DateTime     @default(now())
+  
+  // Class length (weeks)
+  classLength     Int?
+
+  // Course description
+  description     String?
+
+  // Creator data
+  createdByEmail  String?
+  createdByName   String?
+
+  // File type
+  mimeType        String // TODO: remove?
+
+  // Markdown content
+  content         String?
+
+  professor       String
+
+  textbookCost    TextbookCost @default(free)
+  fullClassName   String       @default("Full Class Name") // Full name of class (e.g. "Critical Thinking & Writing")
+  reports         Report[]   // User reports
+  class           Class?       @relation(fields: [classId], references: [id])
+  classId         String?
+  changes         Change[] // Potential changes made by moderators
+  flags           Flag[]
+
+  Professor Professor[]
+}
+
+model ClassSubmission {
+  id              String   @id @default(cuid())
+  dateCreated     DateTime @default(now())
+
+  school           School?  @relation(fields: [schoolId], references: [id])
+  schoolId         String?
+  className        String
+  professor        String
+  classLength      Int?
+  description      String?
+  createdByEmail   String?
+  createdByName    String?
+  textbookCost     TextbookCost @default(free)
+
+  syllabusFileType String
+
+  Syllabus Syllabus[]
+}
+
+model Moderator {
+  id       String   @id @default(cuid())
+  username String   @unique
+  password String
+  changes  Change[]
+  flags    Flag[]
+}
+
+model Flag {
+  id          String    @id @default(cuid())
+  reason      String
+  date        DateTime  @default(now())
+  moderator   Moderator @relation(fields: [moderatorId], references: [id])
+  moderatorId String
+
+  syllabusId String   @unique
+  syllabus   Syllabus @relation(fields: [syllabusId], references: [id])
+}
+
+model Change {
+  id          String    @id @default(cuid())
+  reason      String
+  date        DateTime  @default(now())
+  moderator   Moderator @relation(fields: [moderatorId], references: [id])
+  moderatorId String
+
+  syllabusId String   @unique
+  syllabus   Syllabus @relation(fields: [syllabusId], references: [id])
+
+  className     String?
+  professor     String?
+  reviewed      Boolean      @default(false)
+  dateCreated   DateTime     @default(now())
+  rating        Int?
+  ratingNumber  Int          @default(0)
+  classLength   Int?
+  description   String?
+  textbookCost  TextbookCost @default(free)
+  fullClassName String       @default("Full Class Name")
+}
+
+model Report {
+  id          String   @id @default(cuid())
+  reportType  String
+  reportTitle String
+  reportBody  String
+  reportDate  DateTime @default(now())
+  reportBy    String
+  syllabusId  String
+  syllabus    Syllabus @relation(fields: [syllabusId], references: [id])
+}

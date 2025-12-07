@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "module": "ESNext",
+    "target": "es2017",
+    "strict": true,
+    "noImplicitAny": false,
+    "types": ["graphql-tag"],
+    "skipLibCheck": true
+  }
+}
