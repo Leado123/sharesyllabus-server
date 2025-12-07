@@ -1,34 +1,42 @@
-# Use official Bun image
-FROM oven/bun:1 AS base
+# Use official Bun image with Debian for native module support
+FROM oven/bun:1.1.38-debian AS base
 WORKDIR /app
 
-# Install system dependencies needed for native modules (argon2, etc.)
+# Install dependencies stage with build tools for native modules
+FROM base AS install
+WORKDIR /app
+
+# Install build dependencies for native modules (argon2, etc.)
 RUN apt-get update && apt-get install -y \
     python3 \
     make \
     g++ \
     && rm -rf /var/lib/apt/lists/*
 
-# Install dependencies
-FROM base AS install
-WORKDIR /app
+# Copy package files
 COPY package.json bun.lockb* ./
+
+# Install all dependencies including native ones
 RUN bun install
 
-# Copy source files and generate Prisma client
+# Generate Prisma client (needs the schema)
+COPY prisma ./prisma
+RUN bunx prisma generate
+
+# Build stage - copy source files
 FROM base AS build
 WORKDIR /app
 COPY --from=install /app/node_modules ./node_modules
 COPY . .
-RUN bunx prisma generate
 
 # Final production image
-FROM oven/bun:1 AS release
+FROM oven/bun:1.1.38-debian AS release
 WORKDIR /app
 
-# Install runtime dependencies for native modules
+# Install runtime dependencies
 RUN apt-get update && apt-get install -y \
     openssl \
+    ca-certificates \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy necessary files from build stage
