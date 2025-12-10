@@ -58,5 +58,5 @@ ENV PORT=4000
 # Expose port
 EXPOSE 4000
 
-# Run database migrations and start the application
-CMD ["sh", "-c", "bunx prisma migrate deploy && bun run src/index.ts"]
+# Push schema to database and start the application
+CMD ["sh", "-c", "bunx prisma db push --accept-data-loss && bun run src/index.ts"]
