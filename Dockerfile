@@ -54,9 +54,10 @@ RUN mkdir -p /app/syllabi
 # Set environment variables
 ENV NODE_ENV=production
 ENV PORT=4000
+ENV SEED_DATABASE=true
 
 # Expose port
 EXPOSE 4000
 
-# Push schema to database and start the application
-CMD ["sh", "-c", "bunx prisma db push --accept-data-loss && bun run src/index.ts"]
+# Push schema to database, seed data, and start the application
+CMD ["sh", "-c", "bunx prisma db push --accept-data-loss && bun run src/nameClasses.ts && bun run src/index.ts"]
