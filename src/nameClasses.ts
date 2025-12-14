@@ -728,16 +728,8 @@ export async function seedDatabase() {
 const shouldSeed = process.env.SEED_DATABASE !== "false";
 
 if (shouldSeed) {
-  seedDatabase()
-    .then(() => {
-      console.log("🎉 Seeding finished successfully!");
-      process.exit(0);
-    })
-    .catch((error) => {
-      console.error("💥 Seeding failed:", error);
-      process.exit(1);
-    });
+  await seedDatabase();
+  console.log("🎉 Seeding finished successfully!");
 } else {
   console.log("⏭️  Skipping database seeding (SEED_DATABASE=false)");
-  process.exit(0);
 }

@@ -395,5 +395,8 @@ app.post("/moderator/flag", jwtMiddleware, async (req, res) => {
 });
 
 await new Promise<void>((resolve) =>
-  httpServer.listen({ port: 4000, host: "0.0.0.0" }, resolve),
+  httpServer.listen({ port: 4000, host: "0.0.0.0" }, () => {
+    console.log("🚀 Server is running on http://0.0.0.0:4000");
+    resolve();
+  }),
 );
